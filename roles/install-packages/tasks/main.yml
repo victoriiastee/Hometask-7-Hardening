@@ -1,0 +1,9 @@
+---
+# tasks file for install-packages
+- name: Install pam packages
+  apt:
+    name:
+      - libpam-pwquality
+      - cracklib-runtime
+    state: present
+    update_cache: yes

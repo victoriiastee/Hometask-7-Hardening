@@ -1,0 +1,7 @@
+---
+# tasks file for hardening-password
+- name: Hardening password
+  ansible.builtin.replace:
+    path: /etc/pam.d/common-password
+    regexp: 'pam_pwquality.so retry=3'
+    replace: 'pam_pwquality.so retry=3 minlen=8 usercheck = 1 enforce_for_root'
